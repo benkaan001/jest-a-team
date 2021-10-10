@@ -1,6 +1,5 @@
 
 
-const { string } = require('yargs');
 const Employee = require('../lib/Employee');
 
 test('creates an employee object', () => {
@@ -15,5 +14,12 @@ test('gets the name of the employee', () => {
     const employee = new Employee('Ben', 1, 'ben@noemail.com');
 
     expect(employee.getName()).toEqual(expect.any(String));
+
+});
+
+test('gets the id number of the employee', () => {
+    const employee = new Employee('ben', 1, 'ben@noemail.com');
+
+    expect(employee.getId()).toEqual(expect.any(Number));
 
 });
