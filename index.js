@@ -85,7 +85,7 @@ const getEmployees = () => {
 
    return inquirer.prompt ([
         {
-            type:'text',
+            type:'list',
             name:'role',
             message: 'Please select the role of the employee:',
             choices: ['Engineer', 'Intern']
@@ -179,6 +179,7 @@ const getEmployees = () => {
         
     ])
     .then (userInput4Employees => {
+        let employee;
         let {role, name, id, email, school, github, confirmAdd} = userInput4Employees;
 
         if (role === 'Intern') {
@@ -201,9 +202,6 @@ const getEmployees = () => {
     })
 };
 
-// getManager();
-
-// getEmployees();
 
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
