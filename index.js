@@ -1,4 +1,4 @@
-
+const fs = require('fs');
 const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -201,9 +201,39 @@ const getEmployees = () => {
     })
 };
 
-getManager();
+// getManager();
 
-getEmployees();
+// getEmployees();
+
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/index.html', fileContent, err => { 
+        if (err) {
+            reject(err);
+
+            return;
+        }
+        resolve({
+            ok:true,
+            message: 'Your HTML has been successfully generated!'
+
+        });
+        });
+    });
+};
+
+getManager()
+.then(getEmployees)
+.then (teamArry => {
+    return generateHTML (teamArry);
+})
+.then(pageHTML => {
+    return writeFile(pageHTML);
+})
+.catch(err => {
+    console.log(err);
+});
+
 
 
 
