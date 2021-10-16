@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-// const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./src/generateHTML');
 
 const teamArry =[];
 
@@ -203,14 +203,16 @@ const getEmployees = () => {
 };
 
 
-const writeFile = fileContent => {
+const writeFile = data => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/index.html', fileContent, err => { 
+        fs.writeFile('./dist/index.html', data, err => { 
+            // if there is an error, reject the Promise and send the error to the Promise's `.catch()` method
         if (err) {
             reject(err);
 
             return;
         }
+        // if everthing went well, resolve the Promise and send the successful data to the `.then()` method
         resolve({
             ok:true,
             message: 'Your HTML has been successfully generated!'
@@ -231,6 +233,20 @@ getManager()
 .catch(err => {
     console.log(err);
 });
+
+// // hell version
+
+// getManager()
+// .then(getEmployees)
+// .then(teamArry => {
+//     const pageHTML = generateHTML(teamArry);
+
+//     fs.writeFile('./dist/index.html', pageHTML, err => {
+//         if (err) throw new Error(err);
+
+//         console.log ('Your HTML has been successfully created!');
+//     });
+// });
 
 
 
