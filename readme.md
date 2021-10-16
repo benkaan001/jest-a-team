@@ -14,12 +14,12 @@
 
   ## Description
   
-  * The purpose of this application is to generate a command-line application that accepts user input to generate an employee directory. The user is first prompted to enter the team members' info such as name, employee ID number, e-mail, phone number, emmployee ID number, etc. Once the user input is obtained, the team is generated in the `dist` directory under the `index.html` file.
+  The purpose of this application is to create a command-line application that accepts user input to generate an employee directory/roster. First, the user is prompted to enter the team members' info such as name, employee ID number, e-mail, phone number, emmployee ID number, etc. Once the user input is obtained, then, the team directory is generated in the `dist` directory under the `index.html` file.
 
   ## Technologies 
 
-  * The following technologies are utilized throughout the applicaiton:
-  
+  The following technologies are utilized throughout the applicaiton:
+
   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
   ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -34,7 +34,7 @@
 
   ## Installation
 
-  * Please follow these steps to install the necessary node packages and dependencies:
+  Please follow these steps to install the necessary node packages and dependencies:
 
   `<git clone https://github.com/benkaan001/jest-a-team>` 
 
