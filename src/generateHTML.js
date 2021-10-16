@@ -1,7 +1,7 @@
 
 // design cards here
 
-const managerCard = (manager) => {
+const generateManager = (manager) => {
     return `
     
     <div class="card" style="width: 18rem;">
@@ -20,7 +20,7 @@ const managerCard = (manager) => {
    
 };
 
-const engineerCard = (engineer) => {
+const generateEngineer = (engineer) => {
     return `
     <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -38,7 +38,7 @@ const engineerCard = (engineer) => {
     `;
 };
 
-const internCard = (intern) => {
+const generateIntern = (intern) => {
     return `
     <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -57,7 +57,30 @@ const internCard = (intern) => {
     `
 };
 
-generateHTML = () => {}
+generateHTML = (data) => {
+
+    cardArry =[];
+
+    for (let i=0; i<data.length; i++){
+        const employee = data[i];
+        const role = employee.getRole();
+
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee); 
+            cardArry.push(managerCard);
+        }
+
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+            cardArry.push(engineerCard);
+        }
+
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+            cardArry.push(internCard);
+        }
+    }
+}
 
 
 
