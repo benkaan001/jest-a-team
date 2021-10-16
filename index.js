@@ -5,7 +5,7 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 // const generateHTML = require('./src/generateHTML');
 
-
+const teamArry =[];
 
 // require prompt questions to get Manager's Info First
 
@@ -30,11 +30,11 @@ const getManager = () => {
         name:'id',
         message: "Please enter manager's ID number:",
         validate: managerID => {
-            if(managerID) {
-                return true;
-            } else {
-                console.log('Please enter an ID number!');
+            if(isNaN(managerID)) {
+                console.log('Please enter a valid numeric ID number!');
                 return false;
+            } else {
+                return true;
             }
         }
     },
@@ -66,45 +66,24 @@ const getManager = () => {
             }
         }
     }
-   
-
-
-    // {
-    //     type: 'confirm',
-    //     name: 'confirmAdd',
-    //     message: "Would you like to add a team member?",
-    //     default: true,
-    //     validate: confirmAdd => {
-    //         if (confirmAdd) {
-    //             return true;
-    //         } else {
-    //             console.log('You have chosen to not add additional roles!');
-    //             return false;
-    //         }
-    //     }
-    // },
-    // {
-    //     type:'checkbox',
-    //     name: 'add employee',
-    //     when: ({confirmAdd}) => confirmAdd,
-    //     message: "Please select the type of employee you would like to add:",
-    //     choices: ['engineer', 'intern'],
-    // }
     
 ])
 .then(userInput4Manager => {
-    const {name, id, email, officeNumber} = managerInput;
+    const {name, id, email, officeNumber} = userInput4Manager;
     const manager = new Manager (name, id, email, officeNumber);
 
-  
+    teamArry.push(manager);
+
+
 
 })
 };
 
-const teamArry =[];
+
 
 const getEmployees = () => {
-    inquirer.prompt ([
+
+   return inquirer.prompt ([
         {
             type:'text',
             name:'role',
@@ -184,25 +163,47 @@ const getEmployees = () => {
 
         {
             type: 'confirm',
-            name: 'confirmAddEmployee',
+            name: 'confirmAdd',
             message: 'Would you like to add more employees?',
-            default: false
+            default: false,
+            validate: confirmAdd => {
+                    if (confirmAdd) {
+                        return true;
+                    } else {
+                        console.log('You have chosen to not add additional roles!');
+                        return false;
+                        }
+                    }
         }
 
         
     ])
     .then (userInput4Employees => {
-        let {role, name, id, email, school, github, confirmAddEmployee} = userInput4Employees;
+        let {role, name, id, email, school, github, confirmAdd} = userInput4Employees;
 
         if (role === 'Intern') {
             employee = new Intern (name, id, email, school);
         } else if ( role === 'Engineer') {
             employee = new Engineer (name,id, email, github)
         }
+
+        teamArry.push(employee);
+
+        if (confirmAdd) {
+            return getEmployees(teamArry);
+        } else {
+            return teamArry;
+        }
+
+
         
         
     })
-}
+};
+
+getManager();
+
+getEmployees();
 
 
 
