@@ -2,16 +2,19 @@
 
 const generateManager = (manager) => {
   return `
-  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">${manager.name}</div>
-            <div class="card-header">The Manager</div>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> ID: ${manager.id}</li>
-                    <li class="list-group-item"> Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-                    <li class="list-group-item"> Office Phone Number: ${manager.officeNumber}</li>
-                  </ul>
+  <div class="col-sm-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${manager.name}</h3>
+                <h4> The Manager </h4>
             </div>
+            <div class="card-body">
+                <p class="id">ID: ${manager.id}</p>
+                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="office">Office Phone: ${manager.officeNumber}</p>
+            </div>
+        </div>
+    </div>
 
 `;
 };
@@ -19,33 +22,40 @@ const generateManager = (manager) => {
 const generateEngineer = (engineer) => {
   return `
 
-
-  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">${engineer.name}</div>
-  <div class="card-header"><i class="fas fa-glasses"></i>The Engineer</div>
-  <div class="card-body">
-      <ul class="list-group list-group-flush">
-          <li class="list-group-item"> ID: ${engineer.id}</li>
-          <li class="list-group-item"> Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-          <li class="list-group-item"> GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
-        </ul>
+  <div class="col-sm-4">
+  <div class="card h-100">
+      <div class="card-header">
+          <h3>${engineer.name}</h3>
+          <h4>The Engineer 🤓 </h4>
+      </div>
+      <div class="card-body">
+          <p class="id">ID: ${engineer.id}</p>
+          <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+          <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+      </div>
   </div>
+</div>
 
-    `;
+    
+`;
 };
 
 const generateIntern = (intern) => {
   return `
-  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">${intern.name}</div>
-  <div class="card-header">The Intern</div>
-  <div class="card-body">
-      <ul class="list-group list-group-flush">
-          <li class="list-group-item"> ID: ${intern.id}</li>
-          <li class="list-group-item"> Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
-          <li class="list-group-item"> School: ${intern.school}</li>
-        </ul>
-  </div>
+  <div class="col-sm-4">
+  <div class="card h-100">
+      <div class="card-header">
+          <h3>${intern.name}</h3>
+          <h4>The Intern</h4>
+      </div>
+      <div class="card-body">
+          <p class="id">ID: ${intern.id}</p>
+          <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+          <p class="school">School: ${intern.school}</p>
+      </div>
+</div>
+</div>
+
     
     `;
 };
@@ -89,12 +99,11 @@ generateHTML = (data) => {
      <!-- Font Awesome Icons-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header> 
-        <nav class="navbar navbar-light bg-light">
-           <span class="navbar-brand mb-0 h1 w-100 text-center">Best Team</span>
+        <nav class="navbar navbar-dark bg-primary">
+           <span class="navbar-brand mb-0 h1 w-100 text-center">More Than Jest A Team</span>
         </nav>
     </header>
     <main>
