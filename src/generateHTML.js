@@ -27,7 +27,7 @@ const generateEngineer = (engineer) => {
       <ul class="list-group list-group-flush">
           <li class="list-group-item"> ID: ${engineer.id}</li>
           <li class="list-group-item"> Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-          <li class="list-group-item"> GitHub: ${engineer.github}</li>
+          <li class="list-group-item"> GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
         </ul>
   </div>
 
@@ -73,11 +73,6 @@ generateHTML = (data) => {
     }
   }
 
-
-//   return generateFinalPage(cardArry);
-// };
-
-// const generateFinalPage = (cardArry) => {
   return `
 
 <!DOCTYPE html>
@@ -99,17 +94,20 @@ generateHTML = (data) => {
 <body>
     <header> 
         <nav class="navbar navbar-light bg-light">
-           <span class="navbar-brand mb-0 h1">Best Team</span>
+           <span class="navbar-brand mb-0 h1 w-100 text-center">Best Team</span>
         </nav>
     </header>
     <main>
-        <div>
+        <div class="row justify-content-center">
       
           ${cardArry}
         </div>
     </main>
     
 </body>
+
+
+
 <!-- bootstrap JS plugin package-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
