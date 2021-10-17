@@ -14,7 +14,9 @@
 
   ## Description
   
-  The purpose of this application is to create a command-line application that accepts user input to generate an employee directory/roster. First, the user is prompted to enter the team members' info such as name, employee ID number, e-mail, phone number, emmployee ID number, etc. Once the user input is obtained, then, the team directory is generated in the `dist` directory under the `index.html` file.
+  The purpose of this application is to create a command-line application that accepts user input to generate an employee directory/roster. First, the user is prompted to enter the team members' info such as name, employee ID number, e-mail, phone number, emmployee ID number, etc. Once the user input is obtained through `Inquierer` package, then, the team directory is generated in the `dist` directory under the `index.html` file through file system's `writeFile` functionality. 
+
+  Lastly, the application is built with Test-Driven-Deployment concept using the `JEST` framework for testing. 
 
   ## Technologies 
 
