@@ -4,12 +4,12 @@ const generateManager = (manager) => {
   return `
   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">${manager.name}</div>
-            <div class="card-header"><i class="fas fa-glasses"></i>The Manager</div>
+            <div class="card-header">The Manager</div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"> ID: ${manager.id}</li>
-                    <li class="list-group-item"> Email: ${manager.email}</li>
-                    <li class="list-group-item"> Telephone Number: ${manager.officeNumber}</li>
+                    <li class="list-group-item"> Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+                    <li class="list-group-item"> Office Phone Number: ${manager.officeNumber}</li>
                   </ul>
             </div>
 
@@ -26,7 +26,7 @@ const generateEngineer = (engineer) => {
   <div class="card-body">
       <ul class="list-group list-group-flush">
           <li class="list-group-item"> ID: ${engineer.id}</li>
-          <li class="list-group-item"> Email: ${engineer.email}</li>
+          <li class="list-group-item"> Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
           <li class="list-group-item"> GitHub: ${engineer.github}</li>
         </ul>
   </div>
@@ -38,11 +38,11 @@ const generateIntern = (intern) => {
   return `
   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
   <div class="card-header">${intern.name}</div>
-  <div class="card-header"><i class="fas fa-glasses"></i>The Intern</div>
+  <div class="card-header">The Intern</div>
   <div class="card-body">
       <ul class="list-group list-group-flush">
           <li class="list-group-item"> ID: ${intern.id}</li>
-          <li class="list-group-item"> Email: ${intern.email}</li>
+          <li class="list-group-item"> Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
           <li class="list-group-item"> School: ${intern.school}</li>
         </ul>
   </div>

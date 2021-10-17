@@ -196,6 +196,7 @@ const getEmployees = () => {
         if (confirmAdd) {
             return getEmployees();
         } else {
+            console.log('Your HTML has been successfuly generated!');
             return teamArry;
         }
 
