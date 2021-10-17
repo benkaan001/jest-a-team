@@ -62,6 +62,7 @@
 
   ![demo gif](https://github.com/benkaan001/jest-a-team/blob/main/assets/jest-a-team.gif)
   ![demo gif](https://github.com/benkaan001/jest-a-team/blob/main/assets/jest-testing.gif)
+  
   Watch the test demo video here -[screencastify](https://watch.screencastify.com/v/jvOVsfJWgk0Z58eKQ2dN)
 
 
