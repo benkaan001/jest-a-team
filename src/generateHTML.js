@@ -1,97 +1,86 @@
-
 // design cards here
 
 const generateManager = (manager) => {
-    return `
-    
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">${manager.name}</h5>
-    <p class="card-text"> This is our manager ${manager.name}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> ID: ${manager.id}</li>
-    <li class="list-group-item"> Office Number: ${manager.officeNumber}</li>
-    <li class="list-group-item"> Email: ${manager.email}</li>
-  </ul>
- 
-</div>
+  return `
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">${manager.name}</div>
+            <div class="card-header"><i class="fas fa-glasses"></i>The Manager</div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> ID: ${manager.id}</li>
+                    <li class="list-group-item"> Email: ${manager.email}</li>
+                    <li class="list-group-item"> Telephone Number: ${manager.officeNumber}</li>
+                  </ul>
+            </div>
+
 `;
-   
 };
 
 const generateEngineer = (engineer) => {
-    return `
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">${engineer.name}</h5>
-      <p class="card-text"> This is our engineer ${engineer.name}</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> ID: ${engineer.id}</li>
-      <li class="list-group-item"> GitHub: ${engineer.github}</li>
-      <li class="list-group-item"> Email: ${engineer.email}</li>
-    </ul>
-   
+  return `
+
+
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">${engineer.name}</div>
+  <div class="card-header"><i class="fas fa-glasses"></i>The Engineer</div>
+  <div class="card-body">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"> ID: ${engineer.id}</li>
+          <li class="list-group-item"> Email: ${engineer.email}</li>
+          <li class="list-group-item"> GitHub: ${engineer.github}</li>
+        </ul>
+  </div>
+
+    `;
+};
+
+const generateIntern = (intern) => {
+  return `
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">${intern.name}</div>
+  <div class="card-header"><i class="fas fa-glasses"></i>The Intern</div>
+  <div class="card-body">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"> ID: ${intern.id}</li>
+          <li class="list-group-item"> Email: ${intern.email}</li>
+          <li class="list-group-item"> School: ${intern.school}</li>
+        </ul>
   </div>
     
     `;
 };
 
-const generateIntern = (intern) => {
-    return `
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">${intern.name}</h5>
-      <p class="card-text"> This is our intern ${intern.name}</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> ID: ${intern.id}</li>
-      <li class="list-group-item"> School: ${intern.school}</li>
-      <li class="list-group-item"> Email: ${intern.email}</li>
-    </ul>
-   
-  </div>
-    
-    
-    `
-};
-
 generateHTML = (data) => {
+  cardArry = [];
 
-    cardArry =[];
+  for (let i = 0; i < data.length; i++) {
+    const employee = data[i];
+    const role = employee.getRole();
 
-    for (let i=0; i<data.length; i++){
-        const employee = data[i];
-        const role = employee.getRole();
-
-        if (role === 'Manager') {
-            const managerCard = generateManager(employee); 
-            cardArry.push(managerCard);
-        }
-
-        if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
-            cardArry.push(engineerCard);
-        }
-
-        if (role === 'Intern') {
-            const internCard = generateIntern(employee);
-            cardArry.push(internCard);
-        }
+    if (role === "Manager") {
+      const managerCard = generateManager(employee);
+      cardArry.push(managerCard);
     }
 
-const employeeCards = cardArry.join('');
+    if (role === "Engineer") {
+      const engineerCard = generateEngineer(employee);
+      cardArry.push(engineerCard);
+    }
 
-const generateTeam = generateFinalPage(employeeCards);
-return generateTeam;
+    if (role === "Intern") {
+      const internCard = generateIntern(employee);
+      cardArry.push(internCard);
+    }
+  }
 
+  const employeeCards = cardArry.join("");
+
+  const generateTeam = generateFinalPage(employeeCards);
+  return generateTeam;
 };
 
-
-
 const generateFinalPage = (employeeCards) => {
-    return `
+  return `
 
 <!DOCTYPE html>
 <html lang="en">
@@ -132,8 +121,5 @@ const generateFinalPage = (employeeCards) => {
     
     `;
 };
-
-
-
 
 module.exports = generateHTML;
