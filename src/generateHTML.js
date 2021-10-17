@@ -4,7 +4,7 @@ const generateManager = (manager) => {
   return `
   <div class="col-sm-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header navbar-light" style="background-color: cornflowerblue;">
                 <h3>${manager.name}</h3>
                 <h4> The Manager </h4>
             </div>
@@ -24,7 +24,7 @@ const generateEngineer = (engineer) => {
 
   <div class="col-sm-4">
   <div class="card h-100">
-      <div class="card-header">
+      <div class="card-header navbar-light" style="background-color: cornflowerblue;">
           <h3>${engineer.name}</h3>
           <h4>The Engineer 🤓 </h4>
       </div>
@@ -44,7 +44,7 @@ const generateIntern = (intern) => {
   return `
   <div class="col-sm-4">
   <div class="card h-100">
-      <div class="card-header">
+      <div class="card-header navbar-light" style="background-color: cornflowerblue;">
           <h3>${intern.name}</h3>
           <h4>The Intern</h4>
       </div>
@@ -102,8 +102,8 @@ generateHTML = (data) => {
 </head>
 <body>
     <header> 
-        <nav class="navbar navbar-dark bg-primary">
-           <span class="navbar-brand mb-0 h1 w-100 text-center">More Than Jest A Team</span>
+        <nav class="navbar btn btn-secondary">
+           <span class="navbar-brand mb-0 h1 w-100 text-center" style="font-size: 60px;">More Than Just A Team</span>
         </nav>
     </header>
     <main>
