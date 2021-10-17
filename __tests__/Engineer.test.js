@@ -1,4 +1,4 @@
-const { test, expect } = require('@jest/globals');
+
 const Engineer = require ('../lib/Engineer');
 
 test('gets the github account of the engineer', () => {

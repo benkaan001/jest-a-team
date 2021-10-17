@@ -1,5 +1,4 @@
-const { test, expect } = require('@jest/globals');
-const exp = require('constants');
+
 const Intern = require('../lib/Intern');
 
 test('gets the school name of the Intern',() => {
