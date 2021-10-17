@@ -194,7 +194,7 @@ const getEmployees = () => {
         teamArry.push(employee);
 
         if (confirmAdd) {
-            return getEmployees(teamArry);
+            return getEmployees();
         } else {
             return teamArry;
         }
