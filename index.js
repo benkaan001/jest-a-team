@@ -240,20 +240,6 @@ getManager()
 
 
 
-// // hell version
-
-// getManager()
-// .then(getEmployees)
-// .then(teamArry => {
-//     const pageHTML = generateHTML(teamArry);
-
-//     fs.writeFile('./dist/index.html', pageHTML, err => {
-//         if (err) throw new Error(err);
-
-//         console.log ('Your HTML has been successfully created!');
-//     });
-// });
-
 
 
 
