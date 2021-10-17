@@ -6,12 +6,12 @@ const generateManager = (manager) => {
         <div class="card h-100">
             <div class="card-header navbar-light" style="background-color: cornflowerblue;">
                 <h3>${manager.name}</h3>
-                <h4> The Manager </h4>
+                <h4> <samp>The Manager <i class="fas fa-mug-hot"></i></samp> </h4>
             </div>
             <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Phone: ${manager.officeNumber}</p>
+                <p class="id"><samp>ID:</samp> ${manager.id}</p>
+                <p class="email"><samp>Email: </samp><a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="office"><samp>Office Phone: </samp>${manager.officeNumber}</p>
             </div>
         </div>
     </div>
@@ -26,12 +26,12 @@ const generateEngineer = (engineer) => {
   <div class="card h-100">
       <div class="card-header navbar-light" style="background-color: cornflowerblue;">
           <h3>${engineer.name}</h3>
-          <h4>The Engineer 🤓 </h4>
+          <h4><samp>The Engineer <i class="fas fa-laptop-code"></i></samp> </h4>
       </div>
       <div class="card-body">
-          <p class="id">ID: ${engineer.id}</p>
-          <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-          <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+          <p class="id"><samp>ID: </samp> ${engineer.id}</p>
+          <p class="email"><samp>Email: </samp><a href="mailto:${engineer.email}">${engineer.email}</a></p>
+          <p class="github"><samp>Github: </samp><a href="https://github.com/${engineer.github}" "target="_blank">${engineer.github}</a></p>
       </div>
   </div>
 </div>
@@ -46,12 +46,12 @@ const generateIntern = (intern) => {
   <div class="card h-100">
       <div class="card-header navbar-light" style="background-color: cornflowerblue;">
           <h3>${intern.name}</h3>
-          <h4>The Intern</h4>
+          <h4><samp>The Intern <i class="fas fa-graduation-cap"></i></samp></h4>
       </div>
       <div class="card-body">
-          <p class="id">ID: ${intern.id}</p>
-          <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-          <p class="school">School: ${intern.school}</p>
+          <p class="id"><samp>ID: </samp>${intern.id}</p>
+          <p class="email"><samp>Email: </samp><a href="mailto:${intern.email}">${intern.email}</a></p>
+          <p class="school"><samp>School: </samp>${intern.school}</p>
       </div>
 </div>
 </div>
@@ -97,13 +97,13 @@ generateHTML = (data) => {
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
      <!-- Font Awesome Icons-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     
 </head>
 <body>
     <header> 
-        <nav class="navbar btn btn-secondary">
-           <span class="navbar-brand mb-0 h1 w-100 text-center" style="font-size: 60px;">More Than Just A Team</span>
+        <nav class="navbar btn btn-danger">
+           <span class="navbar-brand mb-0 h1 w-100 text-center" style="font-size: 25px;"><samp>More Than Just A Team</samp></span>
         </nav>
     </header>
     <main>
