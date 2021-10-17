@@ -73,13 +73,11 @@ generateHTML = (data) => {
     }
   }
 
-  const employeeCards = cardArry.join("");
 
-  const generateTeam = generateFinalPage(employeeCards);
-  return generateTeam;
-};
+//   return generateFinalPage(cardArry);
+// };
 
-const generateFinalPage = (employeeCards) => {
+// const generateFinalPage = (cardArry) => {
   return `
 
 <!DOCTYPE html>
@@ -100,15 +98,14 @@ const generateFinalPage = (employeeCards) => {
 </head>
 <body>
     <header> 
-        <nav>
-            <div> Team Header
-            </div>
+        <nav class="navbar navbar-light bg-light">
+           <span class="navbar-brand mb-0 h1">Best Team</span>
         </nav>
     </header>
     <main>
         <div>
-          Employee Info Goes Here 
-          ${employeeCards}
+      
+          ${cardArry}
         </div>
     </main>
     
@@ -121,5 +118,6 @@ const generateFinalPage = (employeeCards) => {
     
     `;
 };
+
 
 module.exports = generateHTML;
