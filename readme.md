@@ -59,6 +59,7 @@
   ## Tests
 
   ![demo gif](https://github.com/benkaan001/jest-a-team/blob/main/assets/jest-a-team.gif)
+  ![demo gif](https://github.com/benkaan001/jest-a-team/blob/main/assets/jest-testing.gif)
 
 
   ## Email
