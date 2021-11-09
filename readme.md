@@ -40,9 +40,7 @@
 
   `<git clone https://github.com/benkaan001/jest-a-team>` 
 
-  `<npm install> `
-
-  `<npm install inquirer> `
+  `<npm install>` to install the production and development dependency packages. 
   
 
 
